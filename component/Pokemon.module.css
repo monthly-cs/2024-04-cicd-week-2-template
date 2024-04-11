@@ -14,6 +14,7 @@
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;
+  flex: 1;
   z-index: 2;
   font-family: var(--font-mono);
 }
@@ -32,6 +33,39 @@
   background-color: rgba(var(--callout-rgb), 0.5);
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
+}
+
+.main button {
+  padding: 1rem 2rem;
+}
+
+.main .ball {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: #ffffff70;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.main .ball::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: 0;
+  background: rgb(233, 21, 21);
+}
+
+.main .pokemon {
+  position: absolute;
+  top: 0;
+}
+
+.main .pokemonBox {
+  position: relative;
+  height: 200px;
+  width: 200px;
 }
 
 .code {
