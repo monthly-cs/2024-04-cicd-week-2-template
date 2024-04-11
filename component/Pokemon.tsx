@@ -1,5 +1,5 @@
 "use client";
-import { Pokemon } from "$/app/action";
+import type { Pokemon } from "$/app/action";
 import Image from "next/image";
 import styles from "./Pokemon.module.css";
 import ClientButton from "./ClientButtons";
