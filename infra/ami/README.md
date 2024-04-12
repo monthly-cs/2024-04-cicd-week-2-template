@@ -1,0 +1,4 @@
+- [Packer] Packer를 이용한 EC2 AMI 생성
+    - https://nyyang.tistory.com/85
+- Build Block
+    - https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/build
