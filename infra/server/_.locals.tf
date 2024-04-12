@@ -2,7 +2,7 @@
 locals {
   tags = {
     "monthly-cs" : "monthly-cs"
-    "week" : 1
+    "week" : 2
   }
   vpc_cidr_block = "10.0.0.0/16"
   vpc_public_subnet_cidr_blocks = {
@@ -32,14 +32,21 @@ locals {
   alb_sg_name = "monthly-cs-alb-sg"
   alb_tg_name = "monthly-cs-alb-tg"
 
-  asg_name = "monthly-cs-asg"
+  asg_name            = "monthly-cs-asg"
   asg_desire_capacity = 0
-  asg_max_size = 0
-  asg_min_size = 0
+  asg_max_size        = 0
+  asg_min_size        = 0
 
   ec2_sg_name                = "monthly-cs-ec2-sg"
   ec2_iam_role_name          = "monthly-cs-ec2-iam-role"
   ec2_launch_template_name   = "monthly-cs-ec2-launch-template"
   ec2_instance_profile_name  = "monthly-cs-ec2-instance-profile"
   ec2_iam_inline_policy_name = "monthly-cs-ec2-iam-inline-policy"
+
+  codedeploy_app_compute_platform = "Server"
+
+  codedeploy_iam_role_name          = "monthly-cs-codedeploy-iam-role"
+  codedeploy_iam_inline_policy_name = "monthly-cs-codedeploy-iam-inline-policy"
+  codedeploy_app_name               = "monthly-cs-codedeploy-app"
+  codedeploy_deployment_name        = "monthly-cs-codedeploy-deployment"
 }

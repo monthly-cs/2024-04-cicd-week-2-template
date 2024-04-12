@@ -11,3 +11,6 @@ variable "region" {
 variable "domain_name" {
   type = string
 }
+variable "ami_id" {
+  type = string
+}
