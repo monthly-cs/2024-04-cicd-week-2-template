@@ -24,9 +24,9 @@ cd ./infra/server
 
 terraform init
 terraform validate
-terraform apply -var="profile=monthly-cs" -var="domain_name=<가비아에서 구매한 도메인 이름>"
-terraform destroy -var="profile=monthly-cs" -var="domain_name=<가비아에서 구매한 도메인 이름>"
+terraform apply -var="profile=monthly-cs" -var="domain_name=<가비아에서 구매한 도메인 이름>" -var="ami_id=<Packer로 생성된 AMI ID>"
+terraform destroy -var="profile=monthly-cs" -var="domain_name=<가비아에서 구매한 도메인 이름>" -var="ami_id=<Packer로 생성된 AMI ID>"
 
 예)
-terraform apply -var="profile=monthly-cs" -var="domain_name=unchaptered.shop"
+terraform apply -var="profile=monthly-cs" -var="domain_name=unchaptered.shop" -var="ami_id=ami-0ba253c2f6060b6c7"
 ```

@@ -3,9 +3,9 @@ resource "aws_launch_template" "ec2_launch_template" {
   key_name = local.ec2_ssh_keyname
   image_id = var.ami_id
 
-  instance_type        = "t2.medium"
+  instance_type          = "t2.medium"
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
-  tags                 = local.tags
+  tags                   = local.tags
 
   iam_instance_profile {
     arn = aws_iam_instance_profile.ec2_instance_profile.arn

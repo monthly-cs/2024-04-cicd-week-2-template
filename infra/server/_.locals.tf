@@ -33,9 +33,11 @@ locals {
   alb_tg_name = "monthly-cs-alb-tg"
 
   asg_name            = "monthly-cs-asg"
-  asg_desire_capacity = 0
-  asg_max_size        = 0
-  asg_min_size        = 0
+  asg_desire_capacity = 1
+  asg_max_size        = 1
+  asg_min_size        = 1
+
+  s3_bucket_name = "monthly-cs-s3-bucket"
 
   ec2_sg_name                = "monthly-cs-ec2-sg"
   ec2_iam_role_name          = "monthly-cs-ec2-iam-role"
