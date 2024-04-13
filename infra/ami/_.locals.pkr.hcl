@@ -4,7 +4,7 @@ locals {
 
   aws_ebs_name          = "monthly-cs-pkr-ebs"
   aws_ebs_ssh_username  = "ubuntu"
-  aws_ebs_instance_type = "t2.medium"
+  aws_ebs_instance_type = "t3.large"
 
   aws_build_name = "monthly-cs-pkr-build"
 
