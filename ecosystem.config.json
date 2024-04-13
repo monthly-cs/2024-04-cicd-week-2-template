@@ -3,6 +3,6 @@
         "name": "app",
         "script": "npm",
         "args": "start",
-        "cwd": "./next"
+        "cwd": "."
     }]
 }

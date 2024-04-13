@@ -24,7 +24,7 @@ cd ./infra/ami
 
 packer init .
 packer validate .
-packer build . > packer.log
+packer build .
 ```
 
 ### Server 배포하기
@@ -38,8 +38,8 @@ terraform apply -var="profile=monthly-cs" -var="domain_name=<가비아에서 구
 terraform destroy -var="profile=monthly-cs" -var="domain_name=<가비아에서 구매한 도메인 이름>" -var="ami_id=<Packer로 생성된 AMI ID>"
 
 예)
-terraform apply -var="profile=monthly-cs" -var="domain_name=unchaptered.shop" -var="ami_id=ami-0ba253c2f6060b6c7"
-terraform destroy -var="profile=monthly-cs" -var="domain_name=unchaptered.shop" -var="ami_id=ami-0ba253c2f6060b6c7"
+terraform apply -var="profile=monthly-cs" -var="domain_name=unchaptered.shop" -var="ami_id=ami-0e22b048b09df457f"
+terraform destroy -var="profile=monthly-cs" -var="domain_name=unchaptered.shop" -var="ami_id=ami-0e22b048b09df457f"
 ```
 
 - Output 출력하기
@@ -121,7 +121,7 @@ aws s3 cp                           ^
 aws s3 cp                           ^
     --region us-east-1              ^
     ../../next-server.zip           ^
-    s3://positive-guinea-monthly-cs-s3-bucket/next-server.zip ^
+    s3://meet-piglet-monthly-cs-s3-bucket/next-server.zip ^
     --profile monthly-cs
 ```
 
@@ -154,7 +154,7 @@ aws deploy create-deployment                                                    
 aws deploy create-deployment                                                                        ^
     --application-name monthly-cs-codedeploy-app	                                                ^
     --deployment-group-name monthly-cs-codedeploy-deployment	                                    ^
-    --s3-location bucket=full-cow-monthly-cs-s3-bucket,bundleType=zip,key=next-server.zip           ^
+    --s3-location bucket=meet-piglet-monthly-cs-s3-bucket,bundleType=zip,key=next-server.zip           ^
     --profile monthly-cs
 ```
 
@@ -164,10 +164,10 @@ aws deploy create-deployment                                                    
 ### 버킷 비우기
 
 ```
-aws s3 rm s3://<출력값 codedeploy_deployment_name> --recursive
+aws s3 rm s3://<출력값 s3_name> --recursive
 
 예)
-aws s3 rm s3://positive-guinea-monthly-cs-s3-bucket --recursive --profile monthly-cs
+aws s3 rm s3://meet-piglet-monthly-cs-s3-bucket --recursive --profile monthly-cs
 ```
 
 ### Server 지우기
@@ -177,5 +177,5 @@ cd ./infra/server
 
 terraform destroy -var="profile=monthly-cs" -var="domain_name=<가비아에서 구매한 도메인 이름>" -var="ami_id=<Packer로 생성된 AMI ID>"
 
-terraform destroy -var="profile=monthly-cs" -var="domain_name=unchaptered.shop" -var="ami_id=ami-0ba253c2f6060b6c7"
+terraform destroy -var="profile=monthly-cs" -var="domain_name=unchaptered.shop" -var="ami_id=ami-0e22b048b09df457f"
 ```

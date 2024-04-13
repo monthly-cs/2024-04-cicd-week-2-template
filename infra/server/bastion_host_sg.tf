@@ -1,14 +1,7 @@
-resource "aws_security_group" "ec2_sg" {
+resource "aws_security_group" "bastion_host_sg" {
   vpc_id = aws_vpc.vpc.id
-  name   = local.ec2_sg_name
+  name   = local.bastion_host_name
   tags   = local.tags
-
-  ingress {
-    from_port   = 3000
-    to_port     = 3000
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 
   ingress {
     from_port   = 22

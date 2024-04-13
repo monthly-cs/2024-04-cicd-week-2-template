@@ -39,11 +39,18 @@ locals {
 
   s3_bucket_name = "monthly-cs-s3-bucket"
 
+  bastion_host_name                   = "monthly-cs-bastion-host-name"
+  bastion_host_instance_type          = "t2.medium"
+  bastion_host_instance_profile_name  = "monthly-cs-bastion-instance-profile"
+  bastion_host_iam_role_name          = "monthly-cs-bastion-iam-role"
+  bastion_host_iam_inline_policy_name = "monthly-cs-bastion-iam-inline-policy"
+
   ec2_sg_name                = "monthly-cs-ec2-sg"
-  ec2_iam_role_name          = "monthly-cs-ec2-iam-role"
-  ec2_launch_template_name   = "monthly-cs-ec2-launch-template"
+  ec2_instance_type          = "t3.large"
   ec2_instance_profile_name  = "monthly-cs-ec2-instance-profile"
+  ec2_iam_role_name          = "monthly-cs-ec2-iam-role"
   ec2_iam_inline_policy_name = "monthly-cs-ec2-iam-inline-policy"
+  ec2_launch_template_name   = "monthly-cs-ec2-launch-template"
 
   codedeploy_app_compute_platform = "Server"
 

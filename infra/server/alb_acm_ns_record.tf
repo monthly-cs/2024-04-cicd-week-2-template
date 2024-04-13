@@ -1,4 +1,4 @@
-resource "aws_route53_record" "alb_acm_record" {
+resource "aws_route53_record" "alb_acm_ns_record" {
   for_each = {
     for aco_map in aws_acm_certificate.alb_acm.domain_validation_options
     : aco_map.domain_name => {

@@ -12,4 +12,5 @@ resource "aws_lb_listener" "alb_listener" {
   }
 
   depends_on = [aws_acm_certificate.alb_acm]
+
 }
