@@ -11,6 +11,12 @@ build {
       "sudo apt install wget -y",
 
       "cd /home/ubuntu",
+
+      # [Node 설치]
+      "curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -",
+      "sudo apt-get install -y nodejs",
+
+      # [CodeDeploy 설치]
       # "wget https://<bucket-name>.s3.<region-identifier>.amazonaws.com/latest/install",
       # https://docs.aws.amazon.com/ko_kr/codedeploy/latest/userguide/resource-kit.html#resource-kit-bucket-names
       "wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install",

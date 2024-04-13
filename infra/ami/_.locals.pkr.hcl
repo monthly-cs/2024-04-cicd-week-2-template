@@ -1,4 +1,5 @@
 locals {
+  aws_profile = "monthly-cs"
   aws_region = "us-east-1"
 
   aws_ebs_name          = "monthly-cs-pkr-ebs"

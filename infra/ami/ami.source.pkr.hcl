@@ -1,6 +1,6 @@
 source "amazon-ebs" "custom_ami_ebs" {
-  profile = "monthly-cs"
-  region  = "us-east-1"
+  profile = local.aws_profile
+  region  = local.aws_region
 
   ami_name      = local.aws_ebs_name
   instance_type = local.aws_ebs_instance_type
